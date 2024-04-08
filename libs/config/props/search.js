@@ -11,7 +11,7 @@ export default {
     // search
     search: {
         shape: 'round',
-        bgColor: '#f2f2f2',
+        bgColor: '#f5f5f5',
         placeholder: '请输入关键字',
         clearabled: true,
         focus: false,
@@ -22,16 +22,16 @@ export default {
         inputStyle: {},
         disabled: false,
         borderColor: 'transparent',
-        searchIconColor: '#909399',
+        searchIconColor: '#88909b',
         searchIconSize: 22,
         color: '#606266',
-        placeholderColor: '#909399',
+        placeholderColor: '#88909b',
         searchIcon: 'search',
         margin: '0',
         animation: false,
         value: '',
         maxlength: '-1',
-        height: 32,
+        height: 30,
         label: null
     }
 }

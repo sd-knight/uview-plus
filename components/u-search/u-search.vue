@@ -81,7 +81,7 @@
 	 * @description 搜索组件，集成了常见搜索框所需功能，用户可以一键引入，开箱即用。
 	 * @tutorial https://ijry.github.io/uview-plus/components/search.html
 	 * @property {String}			shape				搜索框形状，round-圆形，square-方形（默认 'round' ）
-	 * @property {String}			bgColor				搜索框背景颜色（默认 '#f2f2f2' ）
+	 * @property {String}			bgColor				搜索框背景颜色（默认 '#f5f5f5' ）
 	 * @property {String}			placeholder			占位文字内容（默认 '请输入关键字' ）
 	 * @property {Boolean}			clearabled			是否启用清除控件（默认 true ）
 	 * @property {Boolean}			focus				是否自动获得焦点（默认 false ）
@@ -101,7 +101,7 @@
 	 * @property {Boolean} 			animation			是否开启动画，见上方说明（默认 false ）
 	 * @property {String}			value				输入框初始值
 	 * @property {String | Number}	maxlength			输入框最大能输入的长度，-1为不限制长度  (默认 '-1' )
-	 * @property {String | Number}	height				输入框高度，单位px（默认 64 ）
+	 * @property {String | Number}	height				输入框高度，单位px（默认 60 ）
 	 * @property {String | Number}	label				搜索框左边显示内容
 	 * @property {Object}			customStyle			定义需要用到的外部样式
 	 *

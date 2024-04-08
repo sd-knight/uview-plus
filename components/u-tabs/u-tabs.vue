@@ -24,25 +24,30 @@
 							:style="[$u.addStyle(itemStyle), {flex: scrollable ? '' : 1}]"
 							:class="[`u-tabs__wrapper__nav__item-${index}`, item.disabled && 'u-tabs__wrapper__nav__item--disabled']"
 						>
-							<text
+							<view
 								:class="[item.disabled && 'u-tabs__wrapper__nav__item__text--disabled']"
 								class="u-tabs__wrapper__nav__item__text"
 								:style="[textStyle(index)]"
-							>{{ item[keyName] }}</text>
-							<u-badge
-								:show="!!(item.badge && (item.badge.show || item.badge.isDot || item.badge.value))"
-								:isDot="item.badge && item.badge.isDot || propsBadge.isDot"
-								:value="item.badge && item.badge.value || propsBadge.value"
-								:max="item.badge && item.badge.max || propsBadge.max"
-								:type="item.badge && item.badge.type || propsBadge.type"
-								:showZero="item.badge && item.badge.showZero || propsBadge.showZero"
-								:bgColor="item.badge && item.badge.bgColor || propsBadge.bgColor"
-								:color="item.badge && item.badge.color || propsBadge.color"
-								:shape="item.badge && item.badge.shape || propsBadge.shape"
-								:numberType="item.badge && item.badge.numberType || propsBadge.numberType"
-								:inverted="item.badge && item.badge.inverted || propsBadge.inverted"
-								customStyle="margin-left: 4px;"
-							></u-badge>
+							>{{ item[keyName] }}
+								<view
+									class="u-tabs-badge-wrap"
+								>
+									<u-badge
+										:show="!!(item.badge && (item.badge.show || item.badge.isDot || item.badge.value))"
+										:isDot="item.badge && item.badge.isDot || propsBadge.isDot"
+										:value="item.badge && item.badge.value || propsBadge.value"
+										:max="item.badge && item.badge.max || propsBadge.max"
+										:type="item.badge && item.badge.type || propsBadge.type"
+										:showZero="item.badge && item.badge.showZero || propsBadge.showZero"
+										:bgColor="item.badge && item.badge.bgColor || propsBadge.bgColor"
+										:color="item.badge && item.badge.color || propsBadge.color"
+										:shape="item.badge && item.badge.shape || propsBadge.shape"
+										:numberType="item.badge && item.badge.numberType || propsBadge.numberType"
+										:inverted="item.badge && item.badge.inverted || propsBadge.inverted"
+										customStyle="margin-left: 4px;"
+									></u-badge>
+								</view>
+							</view>
 						</view>
 						<!-- #ifdef APP-NVUE -->
 						<view
@@ -321,7 +326,7 @@
 				position: relative;
 
 				&__item {
-					padding: 0 11px;
+					padding: 0 12px;
 					@include flex;
 					align-items: center;
 					justify-content: center;
@@ -333,7 +338,9 @@
 					}
 
 					&__text {
-						font-size: 15px;
+						position: relative;
+						display: inline-block;
+						font-size: 14px;
 						color: $u-content-color;
 
 						&--disabled {
@@ -341,18 +348,24 @@
 						}
 					}
 				}
-
+				
 				&__line {
-					height: 3px;
+					height: 2px;
 					background: $u-primary;
 					width: 30px;
 					position: absolute;
-					bottom: 2px;
+					bottom: 6px;
 					border-radius: 100px;
 					transition-property: transform;
 					transition-duration: 300ms;
 				}
 			}
+		}
+		
+		&-badge-wrap {
+			position: absolute;
+			left: calc(100% - 5px);
+			top: -5px;
 		}
 	}
 </style>

@@ -12,15 +12,15 @@ export default {
     tabs: {
         duration: 300,
         list: [],
-        lineColor: '#3c9cff',
+        lineColor: '#3aa684',
         activeStyle: {
-            color: '#303133'
+            color: '#3aa684'
         },
         inactiveStyle: {
-            color: '#606266'
+            color: '#1d2128'
         },
         lineWidth: 20,
-        lineHeight: 3,
+        lineHeight: 2,
         lineBgSize: 'cover',
         itemStyle: {
             height: '44px'

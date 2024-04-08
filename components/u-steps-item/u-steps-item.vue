@@ -17,12 +17,11 @@
 					</u-icon>
 				</view>
 				<view v-else :style="{
-						backgroundColor: statusClass === 'process' ? parentData.activeColor : 'transparent',
-						borderColor: statusColor
+						backgroundColor: statusClass === 'process' ? parentData.activeColor : parentData.inactiveColor
 					}" class="u-steps-item__wrapper__circle">
 					<text v-if="statusClass === 'process' || statusClass === 'wait'"
 						class="u-steps-item__wrapper__circle__text" :style="{
-							color: index == parentData.current ? '#ffffff' : parentData.inactiveColor
+							color: index == parentData.current ? '#ffffff' : '#88909b'
 						}">{{ index + 1}}</text>
 					<u-icon v-else :color="statusClass === 'error' ? 'error' : parentData.activeColor" size="12"
 						:name="statusClass === 'error' ? 'close' : 'checkmark'"></u-icon>
@@ -32,7 +31,7 @@
 		<view class="u-steps-item__content" :class="[`u-steps-item__content--${parentData.direction}`]"
 			:style="[contentStyle]">
 			<u--text :text="title" :type="parentData.current == index ? 'main' : 'content'" lineHeight="20px"
-				:size="parentData.current == index ? 14 : 13"></u--text>
+				:size="12"></u--text>
 			<slot name="desc">
 				<u--text :text="desc" type="tips" size="12"></u--text>
 			</slot>
@@ -151,7 +150,7 @@
 					style.marginLeft = this.parentData.dot ? '2px' : '6px'
 					style.marginTop = this.parentData.dot ? '0px' : '6px'
 				} else {
-					style.marginTop = this.parentData.dot ? '2px' : '6px'
+					style.marginTop = this.parentData.dot ? '2px' : '8px'
 					style.marginLeft = this.parentData.dot ? '2px' : '6px'
 				}
 
@@ -245,22 +244,19 @@
 				height: 20px;
 
 				&--dot {
-					width: 20px;
-					height: 20px;
+					width: 18px;
+					height: 18px;
 				}
 			}
 
 			&__circle {
-				width: 20px;
-				height: 20px;
+				width: 18px;
+				height: 18px;
 				/* #ifndef APP-NVUE */
 				box-sizing: border-box;
 				flex-shrink: 0;
 				/* #endif */
 				border-radius: 100px;
-				border-width: 1px;
-				border-color: $u-tips-color;
-				border-style: solid;
 				@include flex(row);
 				align-items: center;
 				justify-content: center;
@@ -268,12 +264,8 @@
 
 				&__text {
 					color: $u-tips-color;
-					font-size: 11px;
-					@include flex(row);
-					align-items: center;
-					justify-content: center;
-					text-align: center;
-					line-height: 11px;
+					font-size: 12px;
+					line-height: 18px;
 				}
 			}
 

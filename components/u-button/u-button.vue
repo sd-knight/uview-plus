@@ -310,7 +310,7 @@ $u-button-text-font-size: 15px !default;
 $u-button-loading-text-font-size: 15px !default;
 $u-button-loading-text-margin-left: 4px !default;
 $u-button-large-width: 100% !default;
-$u-button-large-height: 50px !default;
+$u-button-large-height: 44px !default;
 $u-button-normal-padding: 5px 12px !default;
 $u-button-large-padding: 0 15px !default;
 $u-button-normal-font-size: 14px !default;
