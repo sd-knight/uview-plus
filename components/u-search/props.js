@@ -55,6 +55,11 @@ export default {
             type: Boolean,
             default: () => uni.$u.props.search.disabled
         },
+        // 边框颜色
+        borderColor: {
+            type: String,
+            default: () => uni.$u.props.search.borderColor
+        },
         // 搜索图标的颜色，默认同输入框字体颜色
         searchIconColor: {
             type: String,

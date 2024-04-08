@@ -74,7 +74,7 @@ export default {
         // 字体大小
         size: {
             type: [String, Number],
-            default: 14
+            default: () => uni.$u.props.text.size
         },
         // 图标的样式
         iconStyle: {

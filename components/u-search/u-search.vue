@@ -10,7 +10,8 @@
 		    class="u-search__content"
 		    :style="{
 				backgroundColor: bgColor,
-				borderRadius: shape == 'round' ? '100px' : '4px'
+				borderRadius: shape == 'round' ? '100px' : '4px',
+				borderColor: borderColor,
 			}"
 		>
 			<template v-if="$slots.label || label !== null">
@@ -90,6 +91,7 @@
 	 * @property {String}			inputAlign			输入框内容水平对齐方式 （默认 'left' ）
 	 * @property {Object}			inputStyle			自定义输入框样式，对象形式
 	 * @property {Boolean}			disabled			是否启用输入框（默认 false ）
+	 * @property {String}			borderColor			边框颜色，配置了颜色，才会有边框 (默认 'transparent' )
 	 * @property {String}			searchIconColor		搜索图标的颜色，默认同输入框字体颜色 (默认 '#909399' )
 	 * @property {Number | String}	searchIconSize 搜索图标的字体，默认22
 	 * @property {String}			color				输入框字体颜色（默认 '#606266' ）
@@ -259,6 +261,9 @@ $u-search-action-margin-left: 5px !default;
 		padding: $u-search-content-padding;
 		flex: 1;
 		justify-content: space-between;
+		border-width: 1px;
+		border-color: transparent;
+		border-style: solid;
 		overflow: hidden;
 
 		&__icon {
