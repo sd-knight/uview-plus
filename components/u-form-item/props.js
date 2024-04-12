@@ -43,6 +43,11 @@ export default {
         leftIconStyle: {
             type: [String, Object],
             default: () => uni.$u.props.formItem.leftIconStyle,
-        }
+        },
+				// label的位置，left-左边，top-上边
+				labelPosition: {
+				    type: String,
+				    default: () => uni.$u.props.formItem.labelPosition
+				},
     }
 }

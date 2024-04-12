@@ -1,10 +1,10 @@
 <template>
-	<view class="u-form-item">
+	<view class="u-form-item" :class="{nobor: !borderBottom, errcolor: message && parentData.errorType === 'border-bottom'}">
 		<view
 			class="u-form-item__body"
 			@tap="clickHandler"
 			:style="[$u.addStyle(customStyle), {
-				flexDirection: parentData.labelPosition === 'left' ? 'row' : 'column'
+				flexDirection: (labelPosition || parentData.labelPosition) === 'left' ? 'row' : 'column'
 			}]"
 		>
 			<!-- 微信小程序中，将一个参数设置空字符串，结果会变成字符串"true" -->
@@ -15,7 +15,7 @@
 					v-if="required || leftIcon || label"
 					:style="{
 						width: $u.addUnit(labelWidth || parentData.labelWidth),
-						marginBottom: parentData.labelPosition === 'left' ? 0 : '5px',
+						marginBottom: (labelPosition || parentData.labelPosition) === 'left' ? 0 : '5px',
 					}"
 				>
 					<!-- 为了块对齐 -->
@@ -62,15 +62,10 @@
 				v-if="!!message && parentData.errorType === 'message'"
 				class="u-form-item__body__right__message"
 				:style="{
-					marginLeft:  $u.addUnit(parentData.labelPosition === 'top' ? 0 : (labelWidth || parentData.labelWidth))
+					marginLeft:  $u.addUnit((labelPosition || parentData.labelPosition) === 'top' ? 0 : (labelWidth || parentData.labelWidth))
 				}"
 			>{{ message }}</text>
 		</slot>
-		<u-line
-			v-if="borderBottom"
-			:color="message && parentData.errorType === 'border-bottom' ? $u.color.error : propsLine.color"
-			:customStyle="`margin-top: ${message && parentData.errorType === 'message' ? '5px' : 0}`"
-		></u-line>
 	</view>
 </template>
 
@@ -166,6 +161,19 @@
 		@include flex(column);
 		font-size: 14px;
 		color: $u-main-color;
+		border-bottom: 0.5px solid $u-border-color;
+		
+		&.nobor {
+			border-bottom: none;
+		}
+		
+		&.errcolor {
+			border-bottom-color: $u-error;
+		}
+		
+		&:last-child {
+			border-bottom: none;
+		}
 
 		&__body {
 			@include flex;
@@ -200,7 +208,6 @@
 						align-items: center;
 						flex: 1;
 						color: $u-main-color;
-						font-size: 15px;
 					}
 				}
 			}

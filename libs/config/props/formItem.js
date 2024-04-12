@@ -13,11 +13,12 @@ export default {
         label: '',
         prop: '',
         rule: '',
-        borderBottom: '',
+        borderBottom: true,
         labelWidth: '',
         rightIcon: '',
         leftIcon: '',
         required: false,
         leftIconStyle: '',
+				labelPosition: ''
     }
 }
